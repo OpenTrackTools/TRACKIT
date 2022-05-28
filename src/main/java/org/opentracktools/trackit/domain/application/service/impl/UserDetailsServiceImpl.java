@@ -13,25 +13,25 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
-  
-  @Autowired
-  private UserRepository userRepository;
-  
-  
-  @Override
-  public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
-    if (null == login) throw new UsernameNotFoundException("No user found with login " + null);
-    UserEntity retrievedUser;
-    if (login.contains("@")) {
-      //Find by email
-      retrievedUser = userRepository.findUserEntityByEmail(login).orElse(null);
-    } else {
-      //Find by username
-      retrievedUser = userRepository.findUserEntityByUsername(login).orElse(null);
-    }
-    if (null == retrievedUser) {
-      throw new UsernameNotFoundException("No user found with login " + login);
-    }
-    return new ApplicationUserDetails(retrievedUser);
-  }
+
+	@Autowired
+	private UserRepository userRepository;
+
+	@Override
+	public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
+		if (null == login)
+			throw new UsernameNotFoundException("No user found with login " + null);
+		UserEntity retrievedUser;
+		if (login.contains("@")) {
+			// Find by email
+			retrievedUser = userRepository.findUserEntityByEmail(login).orElse(null);
+		} else {
+			// Find by username
+			retrievedUser = userRepository.findUserEntityByUsername(login).orElse(null);
+		}
+		if (null == retrievedUser) {
+			throw new UsernameNotFoundException("No user found with login " + login);
+		}
+		return new ApplicationUserDetails(retrievedUser);
+	}
 }
