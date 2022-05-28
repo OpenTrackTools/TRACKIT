@@ -13,6 +13,7 @@ import java.util.UUID;
  */
 @Getter
 @Setter
+@MappedSuperclass
 public class BaseEntity implements Serializable {
   
   @Id
