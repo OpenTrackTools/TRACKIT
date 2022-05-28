@@ -12,6 +12,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Index;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -49,5 +50,6 @@ public class WorkspaceEntity extends BaseEntity {
 	private String icon;
 
 	@ManyToOne(fetch = FetchType.LAZY, targetEntity = UserEntity.class)
-	private UserEntity owner;
+	@JoinColumn(name = "owner_obj_id", referencedColumnName = "object_id")
+	private String ownerObjId;
 }

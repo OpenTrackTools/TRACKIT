@@ -102,7 +102,7 @@ public class UserEntity extends BaseEntity {
 	/**
 	 *
 	 */
-	protected UserEntity() {
+	public UserEntity() {
 	}
 
 	/**

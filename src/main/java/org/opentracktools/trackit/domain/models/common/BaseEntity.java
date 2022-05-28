@@ -27,7 +27,7 @@ public class BaseEntity implements Serializable {
 	@Getter
 	private long id;
 
-	@Column(nullable = false, unique = true)
+	@Column(name="object_id", nullable = false, unique = true)
 	private String objectId;
 
 	@Column(name = "created_at")
