@@ -13,7 +13,7 @@
       Select User
     </button>
     <ul class="dropdown-menu shadow-sm">
-      <li th:each="user : ${users}"><a href="#" th:data-id="${user.objectId}" class="dropdown-item" th:text="${user.username}"></a></li>
+      <li th:each="user : ${@userViewUtils.listUsers()}"><a href="#" th:data-id="${user.objectId}" class="dropdown-item" th:text="${user.username}"></a></li>
     </ul>
   </div>
 </div>
