@@ -118,6 +118,6 @@ public class UserEntity extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return String.format("User<email: %s>", email);
+		return String.format("User<email: %s, username: %s>", email, username);
 	}
 }

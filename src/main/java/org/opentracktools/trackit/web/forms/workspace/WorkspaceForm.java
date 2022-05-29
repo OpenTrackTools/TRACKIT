@@ -17,5 +17,4 @@ public class WorkspaceForm {
 	private String name;
 	private String description;
 	private String user;
-
 }

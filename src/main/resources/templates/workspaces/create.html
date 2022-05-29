@@ -8,6 +8,14 @@
 <body>
 <div layout:fragment="content" class="container text-center mt-4">
   <h3 class="fs-3 display-3">Create Workspace</h3>
+  <div class="dropdown">
+    <button class="btn btn-sm btn-light dropdown-toggle border-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Select User
+    </button>
+    <ul class="dropdown-menu shadow-sm">
+      <li th:each="user : ${users}"><a href="#" th:data-id="${user.objectId}" class="dropdown-item" th:text="${user.username}"></a></li>
+    </ul>
+  </div>
 </div>
 </body>
 </html>
