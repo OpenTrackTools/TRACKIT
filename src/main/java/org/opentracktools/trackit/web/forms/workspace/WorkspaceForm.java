@@ -16,6 +16,6 @@ public class WorkspaceForm {
 
 	private String name;
 	private String description;
-	private long userId;
+	private String user;
 
 }

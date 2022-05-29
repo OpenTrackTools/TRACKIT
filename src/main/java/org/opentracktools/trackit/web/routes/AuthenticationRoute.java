@@ -17,7 +17,7 @@ import jakarta.validation.Valid;
  * @author Arpan Mukhopadhyay
  */
 @Controller
-public class Authentication extends Base {
+public class AuthenticationRoute extends BaseRoute {
 
 	@Autowired
 	private UserAuthenticationService userAuthenticationService;

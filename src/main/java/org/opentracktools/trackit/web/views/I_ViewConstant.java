@@ -7,4 +7,7 @@ public interface I_ViewConstant {
 
 	String SIGNIN_VIEW = "signin";
 	String SIGNUP_VIEW = "signup";
+	
+	//Workspace
+	String WORKSPACE_CREATE_VIEW = "workspaces/create";
 }

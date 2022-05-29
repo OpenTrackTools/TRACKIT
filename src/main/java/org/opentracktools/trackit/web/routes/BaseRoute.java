@@ -5,5 +5,5 @@ import org.opentracktools.trackit.web.views.I_ViewConstant;
 /**
  * @author Arpan Mukhopadhyay
  */
-public abstract class Base implements I_ViewConstant {
+public abstract class BaseRoute implements I_ViewConstant {
 }
