@@ -11,4 +11,5 @@ public interface UserNameObject {
 
 	String getUsername();
 	String getObjectId();
+	String getAvatar();
 }

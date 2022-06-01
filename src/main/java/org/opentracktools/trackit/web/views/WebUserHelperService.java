@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.opentracktools.trackit.domain.application.service.impl;
+package org.opentracktools.trackit.web.views;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,16 +11,19 @@ import org.opentracktools.trackit.web.forms.commons.UserDropDownEntry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+
 /**
  * @author Arpan Mukhopadhyay
  *
  */
-@Component("userViewUtils")
-public class UserViewUrilService {
+@Component("userUtils")
+public class WebUserHelperService {
 
 	@Autowired
 	private UserRepository userRepository;
-	
+
 	/**
 	 * 
 	 * @return
@@ -28,7 +31,7 @@ public class UserViewUrilService {
 	public List<UserDropDownEntry> listUsers() {
 		List<UserDropDownEntry> userDropDownList = new ArrayList<>();
 		userRepository.getUsernameObjectIds().forEach(e -> {
-			userDropDownList.add(new UserDropDownEntry(e.getObjectId(), e.getUsername()));
+			userDropDownList.add(new UserDropDownEntry(e.getObjectId(), e.getUsername(), null));
 		});
 		return userDropDownList;
 	}

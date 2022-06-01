@@ -1,21 +1,78 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
-      layout:decorate="~{base.html}">
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{base.html}">
 <head>
-  <meta charset="UTF-8">
-  <title>Create Workspace</title>
+<meta charset="UTF-8">
+<title>Create Workspace</title>
 </head>
 <body>
-<div layout:fragment="content" class="container text-center mt-4">
-  <h3 class="fs-3 display-3">Create Workspace</h3>
-  <div class="dropdown">
-    <button class="btn btn-sm btn-light dropdown-toggle border-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Select User
-    </button>
-    <ul class="dropdown-menu shadow-sm">
-      <li th:each="user : ${@userViewUtils.listUsers()}"><a href="#" th:data-id="${user.objectId}" class="dropdown-item" th:text="${user.username}"></a></li>
-    </ul>
-  </div>
-</div>
+	<div layout:fragment="content" class="container mt-4">
+		<h3 class="fs-3 display-3 text-center">Create Workspace</h3>
+		<form action="" th:method="@{'POST'}" th:action="@{/workspaces/new}" th:object="${form}" autocomplete="off">
+			<div class="row mb-3">
+				<label for="name" class="col-sm-2 col-form-label">Name</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="name" th:field="*{name}" />
+				</div>
+			</div>
+			<div class="row mb-3">
+				<label for="description" class="col-sm-2 col-form-label">Description</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="description" />
+				</div>
+			</div>
+			<div class="row mb-3">
+				<label for="description" class="col-sm-2 col-form-label">Notes</label>
+				<div class="col-sm-10">
+					<textarea id="notes" class="form-control"></textarea>
+				</div>
+			</div>
+			<div class="row mb-3">
+				<fieldset class="row">
+					<div class="col-2 col-sm-2">
+						<label for="type" class="col-form-label">Type</label>
+					</div>
+					<div class="col-4">
+						<!-- <div class="dropdown">
+							<button class="btn btn-sm btn-light dropdown-toggle border-1"
+								type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Select Type</button>
+							<ul class="dropdown-menu shadow-sm">
+								<li th:each="type : ${@commonUtils.listTypes()}"><a href="#"
+									th:data-id="${type.value}" class="dropdown-item"
+									th:text="${type.label}"></a></li>
+							</ul>
+						</div> -->
+						<select id="type" class="form-select" th:field="*{type}">
+							<option value="">Select Type</option>
+							<option th:each="type : ${@commonUtils.listTypes()}" th:value="${type.value}" th:text="${type.label}"></option>
+						</select>
+					</div>
+					<div class="col-2 col-sm-2">
+						<label for="owner" class="col-form-label">Owner</label>
+					</div>
+					<div class="col-4">
+						<!-- <div class="dropdown">
+							<button class="btn btn-sm btn-light dropdown-toggle border-1"
+								type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Select User</button>
+							<ul class="dropdown-menu shadow-sm">
+								<li th:each="user : ${@userUtils.listUsers()}"><a href="#"
+									th:data-id="${user.objectId}" class="dropdown-item"
+									th:text="${user.username}"></a></li>
+							</ul>
+						</div> -->
+						<select id="owner" class="form-select" th:field="*{user}">
+							<option value="">Select User</option>
+							<option th:each="user : ${@userUtils.listUsers()}" th:value="${user.objectId}" th:text="${user.username}"></option>
+						</select>
+					</div>
+				</fieldset>
+			</div>
+			<div class="mb-3 text-end">
+				<button type="submit" class="btn btn-danger">Save</button>
+			</div>
+		</form>
+	</div>
 </body>
 </html>

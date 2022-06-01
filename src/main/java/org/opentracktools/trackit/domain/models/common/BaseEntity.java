@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
+import org.hibernate.annotations.NaturalId;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,9 +30,6 @@ public class BaseEntity implements Serializable {
 	@Getter
 	private long id;
 
-	@Column(name="object_id", nullable = false, unique = true)
-	private String objectId;
-
 	@Column(name = "created_at")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdAt;
@@ -46,10 +45,10 @@ public class BaseEntity implements Serializable {
 	@Column(name = "is_deleted")
 	private boolean deleted = false;
 
-	/**
-	 *
-	 */
-	public BaseEntity() {
-		this.objectId = UUID.randomUUID().toString().replace("-", "");
-	}
+//	/**
+//	 *
+//	 */
+//	public BaseEntity() {
+//		
+//	}
 }

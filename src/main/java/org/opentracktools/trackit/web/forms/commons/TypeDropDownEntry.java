@@ -8,15 +8,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author Arpan Mukhopadhyay
+ * @author arixion
  *
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDropDownEntry {
+public class TypeDropDownEntry {
 
-	private String objectId;
-	private String username;
-	private String avatar;
+	private String value;
+	private String pic;
+	private String label;
+	private String subLabel;
+	
 }

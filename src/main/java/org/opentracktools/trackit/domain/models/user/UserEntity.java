@@ -2,7 +2,9 @@ package org.opentracktools.trackit.domain.models.user;
 
 import java.io.Serial;
 import java.util.Date;
+import java.util.UUID;
 
+import org.hibernate.annotations.NaturalId;
 import org.opentracktools.trackit.domain.models.common.BaseEntity;
 
 import jakarta.persistence.Column;
@@ -24,6 +26,11 @@ public class UserEntity extends BaseEntity {
 
 	@Serial
 	private static final long serialVersionUID = -648190166481989180L;
+
+	@NaturalId
+	@Column(name="object_id", nullable = false, unique = true)
+	private String objectId;
+	
 	@Column(name = "username", nullable = false)
 	private String username;
 
@@ -103,6 +110,7 @@ public class UserEntity extends BaseEntity {
 	 *
 	 */
 	public UserEntity() {
+		this.objectId = UUID.randomUUID().toString().replace("-", "");
 	}
 
 	/**
@@ -112,6 +120,7 @@ public class UserEntity extends BaseEntity {
 	 * @param email    the email
 	 */
 	public UserEntity(String username, String email) {
+		this.objectId = UUID.randomUUID().toString().replace("-", "");
 		this.username = username;
 		this.email = email;
 	}

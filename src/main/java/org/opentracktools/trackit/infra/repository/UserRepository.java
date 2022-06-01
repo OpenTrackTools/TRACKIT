@@ -35,9 +35,17 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
 	
 	/**
 	 * 
+	 * @param objectId
 	 * @return
 	 */
-	@Query("select u.objectId as objectId, u.username as username from UserEntity u where u.locked = false")
+	@Query("select u from UserEntity u where u.deleted = false and u.locked = false and u.objectId = :objectId")
+	Optional<UserEntity> findByObjectId(@Param("objectId") String objectId);
+	
+	/**
+	 * 
+	 * @return
+	 */
+	@Query("select u.objectId as objectId, u.username as username, u.avatar as avatar from UserEntity u where u.locked = false")
 	Collection<UserNameObject> getUsernameObjectIds();
 	
 	/**
