@@ -1,94 +1,97 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+			xmlns:th="http://www.thymeleaf.org"
+>
 <head>
-<meta charset="UTF-8">
-<title></title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-	crossorigin="anonymous" />
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />	
-<link rel="stylesheet" type="text/css" href="/css/styles.css" />
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-	crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <title></title>
+  <link
+      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"
+        rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="/css/bs.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/styles.css" rel="stylesheet" type="text/css"/>
+  <script
+      crossorigin="anonymous"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<header
-		class="p-3 py-2 navbar sticky-top bg-white text-dark shadow-sm app-navbar">
-		<div class="container">
-			<div
-				class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start flex-grow-1">
-				<a href="/"
-					class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-				</a>
-				<ul
-					class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 main-nav me-auto">
-					<li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
-				</ul>
-				<ul class="nav flex-nowrap align-items-center ms-sm-3 list-unstyled">
-					<li class="nav-item ms-2 dropdown">
-						<a href="#" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
-							<i class="bi bi-plus-lg"></i>
-						</a>
-						<ul class="dropdown-menu dropdown-animation shadow border-0 dropdown-menu-end pt-3 small me-md-n3 mt-3">
-							<li>
-								<a href="/workspaces/new" class="dropdown-item">
-									New Workspace
-								</a>
-							</li>
-							<li>
-								<a href="/projects/new" class="dropdown-item">
-									New Project
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li class="nav-item ms-2 dropdown"><a href="#"
-						class="nav-link btn icon-md p-0" data-bs-auto-close="outside"
-						data-bs-display="static" data-bs-toggle="dropdown"
-						aria-expanded="false">ProfileMenu</a>
-						<ul
-							class="dropdown-menu dropdown-animation shadow border-0 dropdown-menu-end pt-3 small me-md-n3 mt-3">
-							<li class="px-3">
-								<div
-									class="d-flex align-items-center position-relative flex-grow-1">
-									<div class="avatar me-3">
-										<img class="avatar-img rounded-circle"
-											src="https://social.webestica.com/assets/images/avatar/07.jpg"
-											alt="avatar">
-									</div>
-									<div>
-										<a href="" class="h6 stretched-link text-decoration-none">
-
-										</a>
-										<p class="small m-0">Web Developer</p>
-									</div>
-								</div> <a href=""
-								class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center">View
-									profile</a>
-							</li>
-							<li><a href="/settings" class="dropdown-item">Settings
-									and Configuration</a></li>
-							<li>
-								<form th:action="@{/signout}" th:method="@{delete}">
-									<button type="submit" class="dropdown-item">Sign out</button>
-								</form>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</header>
-	<main>
-		<div layout:fragment="content"></div>
-	</main>
+<header
+    class="p-3 py-2 navbar sticky-top bg-white text-dark app-navbar">
+  <div class="container">
+    <div
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start flex-grow-1">
+      <a class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
+         href="/">
+      </a>
+      <ul
+          class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 main-nav me-auto">
+        <li><a class="nav-link px-2 text-secondary" href="/">Home</a></li>
+      </ul>
+      <ul class="nav flex-nowrap align-items-center ms-sm-3 list-unstyled">
+        <li class="nav-item ms-2 dropdown">
+          <a aria-expanded="false" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
+             href="#">
+            <i class="bi bi-plus-lg"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-animation shadow border-0 dropdown-menu-end pt-3 small me-md-n3 mt-3">
+            <li>
+              <a class="dropdown-item" href="/workspaces/new">
+                New Workspace
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/projects/new">
+                New Project
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item ms-2 dropdown"><a aria-expanded="false"
+                                              class="nav-link btn icon-md p-0" data-bs-auto-close="outside"
+                                              data-bs-display="static" data-bs-toggle="dropdown"
+                                              href="#">ProfileMenu</a>
+          <ul
+              class="dropdown-menu dropdown-animation shadow border-0 dropdown-menu-end pt-3 small me-md-n3 mt-3">
+            <li class="px-3">
+              <div
+                  class="d-flex align-items-center position-relative flex-grow-1">
+                <div class="avatar me-3">
+                  <img alt="avatar"
+                       class="avatar-img rounded-circle"
+                       src="https://social.webestica.com/assets/images/avatar/07.jpg">
+                </div>
+                <div>
+                  <a class="h6 stretched-link text-decoration-none" href="">
+                  
+                  </a>
+                  <p class="small m-0">Web Developer</p>
+                </div>
+              </div>
+              <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
+                 href="">View
+                profile</a>
+            </li>
+            <li><a class="dropdown-item" href="/settings">Settings
+              and Configuration</a></li>
+            <li>
+              <form th:action="@{/signout}" th:method="@{delete}">
+                <button class="dropdown-item" type="submit">Sign out</button>
+              </form>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<main>
+  <div layout:fragment="content"></div>
+</main>
 </body>
 </html>

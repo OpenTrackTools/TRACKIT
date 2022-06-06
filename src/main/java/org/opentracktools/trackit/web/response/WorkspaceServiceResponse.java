@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.opentracktools.trackit.web.response;
 

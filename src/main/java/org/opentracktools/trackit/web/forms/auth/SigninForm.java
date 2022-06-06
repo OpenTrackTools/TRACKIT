@@ -7,17 +7,16 @@ import lombok.Getter;
  */
 @Getter
 public class SigninForm {
-
-	private String login;
-	private String password;
-
-	/**
-	 *
-	 * @param login
-	 * @param password
-	 */
-	public SigninForm(String login, String password) {
-		this.login = login;
-		this.password = password;
-	}
+  
+  private String login;
+  private String password;
+  
+  /**
+   * @param login
+   * @param password
+   */
+  public SigninForm(String login, String password) {
+    this.login = login;
+    this.password = password;
+  }
 }

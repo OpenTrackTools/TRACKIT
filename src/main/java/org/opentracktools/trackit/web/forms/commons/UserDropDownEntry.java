@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.opentracktools.trackit.web.forms.commons;
 
@@ -15,8 +15,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDropDownEntry {
-
-	private String objectId;
-	private String username;
-	private String avatar;
+  
+  private String objectId;
+  private String username;
+  private String avatar;
 }

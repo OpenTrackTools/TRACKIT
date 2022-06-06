@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.opentracktools.trackit.web.forms.commons;
 
@@ -8,7 +8,7 @@ package org.opentracktools.trackit.web.forms.commons;
  *
  */
 public class HTMLDropDownElement {
-
-	private String value;
-	private String label;
+  
+  private String value;
+  private String label;
 }

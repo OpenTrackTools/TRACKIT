@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.opentracktools.trackit.domain.models.common;
 
@@ -8,6 +8,6 @@ package org.opentracktools.trackit.domain.models.common;
  *
  */
 public enum Type {
-
-	PRIVATE, PUBLIC;
+  
+  PRIVATE, PUBLIC;
 }

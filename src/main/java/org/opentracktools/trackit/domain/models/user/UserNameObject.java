@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.opentracktools.trackit.domain.models.user;
 
@@ -8,8 +8,10 @@ package org.opentracktools.trackit.domain.models.user;
  *
  */
 public interface UserNameObject {
-
-	String getUsername();
-	String getObjectId();
-	String getAvatar();
+  
+  String getUsername();
+  
+  String getObjectId();
+  
+  String getAvatar();
 }

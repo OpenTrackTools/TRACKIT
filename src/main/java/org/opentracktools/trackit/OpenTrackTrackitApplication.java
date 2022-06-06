@@ -9,14 +9,13 @@ import org.springframework.context.ConfigurableApplicationContext;
  */
 @SpringBootApplication
 public class OpenTrackTrackitApplication {
-
-	/**
-	 *
-	 * @param args
-	 */
-	@SuppressWarnings("unused")
-	public static void main(String[] args) {
-		ConfigurableApplicationContext trackitApplicationContext = SpringApplication
-				.run(OpenTrackTrackitApplication.class, args);
-	}
+  
+  /**
+   * @param args
+   */
+  @SuppressWarnings("unused")
+  public static void main(String[] args) {
+    ConfigurableApplicationContext trackitApplicationContext = SpringApplication
+        .run(OpenTrackTrackitApplication.class, args);
+  }
 }
